@@ -1,0 +1,155 @@
+<!---
+ * Partner Creator
+ *
+ * This program allows the user to input names and create many (up to 20 (if possible for size of people))
+ * different combos of partnerships. These partnerships can then be saved and accessed later
+ * 
+ * This file creates the user interface of the app
+ * 
+ * @author Luke Halasy, lhalasy@gmail.com
+ * @version April 29, 2018
+ *
+-->
+
+
+
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="google" content="notranslate">
+    <meta http-equiv="Content-Language" content="en">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta http-equiv="X-UA-Compatible" content="ie=edge">
+    <title>Partner Creator</title>
+
+
+    <!--Used jQuery for added interactivity in the app
+    -->
+    <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.3.1/jquery.min.js"></script>
+
+    <!--Used MaterializeCss for added GUI Flavor/Form Customization
+    -->
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/materialize/1.0.0-beta/css/materialize.min.css">
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/materialize/1.0.0-beta/js/materialize.min.js"></script>
+
+    <!--Used external library of material icons
+        This is an open source and free to use libraby
+    -->
+    <link href="https://fonts.googleapis.com/icon?family=Material+Icons" rel="stylesheet">
+    <link rel="stylesheet" href="style.css">
+    
+    <script type="text/javascript" src="pageDynamics.js"></script>
+    <script src="sorter.js"></script>
+
+</head>
+<body>
+    <div class="container" style="height: 100%">
+        <div class="row" style="height: 100%">
+            <div class="header col s12 z-depth-5" style="background-color: #585c74; height: 12%">
+                <h4 class="center-align">Partner Creator</h4>
+            </div>
+            <form class="partnerAdderForm col s6" onsubmit='return false' style="background-color:#44475a; height: 88%" autocomplete="off">
+                <h6 style="color: #f8f8f2">Add People</h6>
+                <div class="row" style="padding-top: 5px;">
+                    <div class="input-field col s4">
+                        <i class="material-icons prefix noSelect">person_add</i>
+                        <input id="icon_prefix" type="text" class="personAdderInput">
+                        <label for="icon_prefix">Name</label>
+                    </div>
+                    <div class="col s2"><a><i class="material-icons addPerson addPeopleSideButtons noSelect clickableIcon">add</i></a></div>
+                    <div class="col s2"><a><i class="material-icons refreshPeople addPeopleSideButtons noSelect clickableIcon">refresh</i></a></div>
+                    <div class="col s2"><a><i class="material-icons retrieveSaveModalButton addPeopleSideButtons noSelect clickableIcon">folder_open</i></a></div>
+                    <div class="col s2"><a><i class="material-icons sendPeople addPeopleSideButtons noSelect clickableIcon">send</i></a></div>
+                </div>
+                <ul class="collection peopleList" style="overflow: auto; max-height: 70%;" tabindex: "5001">
+                </ul>
+                
+            </form>
+
+            <div class="partnerShower col s6" style="background-color:#6272a4; height: 88%">
+                <h6 style="color: #f8f8f2; padding-bottom: 15px" class="partnersTitle">Partners</h6>
+                <ul class="collection partnerList" style="overflow: auto; max-height: 73%;">
+                </ul>
+
+                <div class="showWhenPartnersMade" style="display: none">
+                    <div class="divider"></div>
+                    <div class="row" style="padding-top: 20px;">
+                        <div class="col s2">
+                            <a><i class="material-icons previousPartnerListArrow clickableIcon noSelect">chevron_left</i></a>
+                        </div>
+                        
+                        <div class="col s2 offset-s2">
+                            <!--onclick="$('#partnersModal').modal('open');"-->
+                            <a><i class="material-icons fullscreenButton clickableIcon noSelect">fullscreen</i></a>
+                        </div>
+                        <div class="col s1">
+                            <a><i class="material-icons openSaveModalButton clickableIcon noSelect">save</i></a>
+                        </div>
+                        <div class="col s2 offset-s3">
+                            <a><i class="material-icons nextPartnerListArrow clickableIcon noSelect">chevron_right</i></a>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+        <div id="fullscreenPartnersModal" class="modal" style="background-color: #44475a;">
+            <div class="modal-content">
+                <div class="row fullscreenPartnerListHolder">
+                    <div class="col s3">
+                        <ul class="collection">
+                            <li class="collection-item">fdsfds and gdgdffgd</li>
+                        </ul>
+                    </div>
+                    <div class="col s3">
+                        <ul class="collection">
+                            <li class="collection-item">fdsfds</li>
+                        </ul>
+                    </div>
+                    <div class="col s3">
+                        <ul class="collection">
+                            <li class="collection-item">fdsfds</li>
+                        </ul>
+                    </div>
+                    <div class="col s3">
+                        <ul class="collection">
+                            <li class="collection-item">fdsfds</li>
+                        </ul>
+                    </div>
+                </div>
+            </div>
+            <div class="modal-footer" style="background-color: #44475a;">
+                <a href="#!" class=" modal-action modal-close btn-flat" style="color: white">Exit</a>
+            </div>
+        </div>
+        
+        <div id="retrieveSaveModal" class="modal" style="background-color: #44475a;">
+            <div class="modal-content">
+                <h6 style="color: white; padding-bottom: 10px">Saved Partners</h6>
+                <ul class="collection saveFileList">
+                </ul>
+            </div>
+            <div class="modal-footer" style="background-color: #44475a;">
+                <a href="#!" class=" modal-action closeRetrieveSaveModal btn-flat" style="color: white">Exit</a>
+            </div>
+        </div>
+
+        <div id="saveModal" class="modal" style="background-color: #44475a;">
+            <div class="modal-content">
+                <form onsubmit='return false' autocomplete="off">
+                    <div class="row" style="padding-top: 5px;">
+                        <div class="input-field col s8">
+                            <input id="saveName" class="saveNameInput" type="text" class="validate">
+                            <label for="saveName">Save Name</label>
+                        </div>
+                        <div class="col s2"><a><i class="material-icons saveButton addPeopleSideButtons noSelect clickableIcon">save</i></a></div>
+                    </div> 
+                </form>
+            </div>
+            <div class="modal-footer" style="background-color: #44475a;">
+                <a href="#!" class=" modal-action modal-close btn-flat" style="color: white">Exit</a>
+            </div>
+        </div>
+    </div>
+</body>
+</html>
