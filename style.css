@@ -1,5 +1,5 @@
 /*
- * Partner Creator
+ * Classroom Shuffle
  *
  * This program allows the user to input names and create many (up to 20 (if possible for size of people))
  * different combos of partnerships. These partnerships can then be saved and accessed later
@@ -13,193 +13,194 @@
  *
 */
 
-body, html {
-    background-color: #282a36;
-    overflow: hidden;
-    height: 100%;
+body,
+html {
+  background-color: #282a36;
+  overflow: hidden;
+  height: 100%;
 }
 
 .header {
-    text-align: center;
-    color: #f8f8f2;
+  text-align: center;
+  color: #f8f8f2;
 }
 
 i {
-    color: #f8f8f2;
+  color: #f8f8f2;
 }
 
 .collection {
-    overflow: auto;
+  overflow: auto;
 }
 
 /* label color */
 .input-field label {
-    color:#f8f8f2;
+  color: #f8f8f2;
 }
 
-.input-field input[type=text] {
-    color: #f8f8f2;
+.input-field input[type='text'] {
+  color: #f8f8f2;
 }
 /* label focus color */
-.input-field input[type=text]:focus + label {
-    color: #f8f8f2;
+.input-field input[type='text']:focus + label {
+  color: #f8f8f2;
 }
 
 /* label underline focus color */
-.input-field input[type=text]:focus {
-    border-bottom: 1px solid red;
-    box-shadow: 0 1px 0 0 #000;
+.input-field input[type='text']:focus {
+  border-bottom: 1px solid red;
+  box-shadow: 0 1px 0 0 #000;
 }
 /* valid color */
-.input-field input[type=text].valid {
-    border-bottom: 1px solid #000;
-    box-shadow: 0 1px 0 0 #000;
+.input-field input[type='text'].valid {
+  border-bottom: 1px solid #000;
+  box-shadow: 0 1px 0 0 #000;
 }
 /* invalid color */
-.input-field input[type=text].invalid {
-    border-bottom: 1px solid red;
-    box-shadow: 0 1px 0 0 red;
+.input-field input[type='text'].invalid {
+  border-bottom: 1px solid red;
+  box-shadow: 0 1px 0 0 red;
 }
 /* icon prefix focus color */
 .input-field .prefix.active {
-    color:  #8be9fd;
+  color: #8be9fd;
 }
 
-        /* label focus color */
+/* label focus color */
 .input-field input:focus + label {
-    color: #8be9fd !important;
+  color: #8be9fd !important;
 }
 /* label underline focus color */
 .row .input-field input:focus {
-    border-bottom: 1px solid #8be9fd !important;
-    box-shadow: 0 1px 0 0 #8be9fd !important
+  border-bottom: 1px solid #8be9fd !important;
+  box-shadow: 0 1px 0 0 #8be9fd !important;
 }
 
 .deletePerson {
-    font-size: 25;
-    color:#282a36;
+  font-size: 25;
+  color: #282a36;
 }
 
 .deletePerson:hover {
-    /*color:#6272a4;*/
-    color: #ff5555;
+  /*color:#6272a4;*/
+  color: #ff5555;
 }
 
 .fullscreenButton {
-    font-size: 45px;
+  font-size: 45px;
 }
 
 .fullscreenButton:hover {
-    color:#44475a;
+  color: #44475a;
 }
 
 .openSaveModalButton {
-    font-size: 40px;
-    padding-top: 3px;
+  font-size: 40px;
+  padding-top: 3px;
 }
 
 .openSaveModalButton:hover {
-    color:#44475a;
+  color: #44475a;
 }
 
 .previousPartnerListArrow {
-    font-size: 45px;
+  font-size: 45px;
 }
 
 .previousPartnerListArrow:hover {
-    color:#44475a;
+  color: #44475a;
 }
 
 .nextPartnerListArrow {
-    font-size: 45px;
+  font-size: 45px;
 }
 
 .nextPartnerListArrow:hover {
-    color:#44475a;
+  color: #44475a;
 }
 
 .addPeopleSideButtons {
-    position: relative;
-    top: 23px;
-    font-size: 35px;
+  position: relative;
+  top: 23px;
+  font-size: 35px;
 }
 
 .refreshPeople {
-    color: #f8f8f2;
+  color: #f8f8f2;
 }
 
 .refreshPeople:hover {
-    color: #ff5555;
+  color: #ff5555;
 }
 
 .retrieveSaveModalButton {
-    color: #f8f8f2;
+  color: #f8f8f2;
 }
 
 .retrieveSaveModalButton:hover {
-    color: #ff79c6;
+  color: #ff79c6;
 }
 
 .sendPeople {
-    color: #f8f8f2;
+  color: #f8f8f2;
 }
 
 .sendPeople:hover {
-    color: #50fa7b;
+  color: #50fa7b;
 }
 
 .addPerson {
-    color: #f8f8f2;
+  color: #f8f8f2;
 }
 
 .clickableIcon {
-    cursor: pointer;
+  cursor: pointer;
 }
 
 .addPerson:hover {
-    color: #8be9fd;
+  color: #8be9fd;
 }
 
 .noSelect {
-    -webkit-touch-callout: none;
-    -webkit-user-select: none;
-    -khtml-user-select: none;
-    -moz-user-select: none;
-    -ms-user-select: none;
-    user-select: none;
+  -webkit-touch-callout: none;
+  -webkit-user-select: none;
+  -khtml-user-select: none;
+  -moz-user-select: none;
+  -ms-user-select: none;
+  user-select: none;
 }
 
 #fullscreenPartnersModal {
-    width: 70% !important; 
-    max-height: 85% !important ;
+  width: 70% !important;
+  max-height: 85% !important ;
 }
 
 #saveModal {
-    width: 30% !important; 
+  width: 30% !important;
 }
 
 .saveButton:hover {
-    color: #8be9fd;
+  color: #8be9fd;
 }
 
 #retrieveSaveModal {
-    width: 50% !important; 
+  width: 50% !important;
 }
 
 .loadSaveFileButton {
-    color: #44475a;
+  color: #44475a;
 }
 
 .loadSaveFileButton:hover {
-    color: #ff79c6;
+  color: #ff79c6;
 }
 
 .deleteSaveFileButton {
-    color: #ff5555;
-    position: relative;
-    left: -10px;
+  color: #ff5555;
+  position: relative;
+  left: -10px;
 }
 
 .deleteSaveFileButton:hover {
-    color: #5a0f0f;
+  color: #5a0f0f;
 }

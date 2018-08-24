@@ -1,11 +1,11 @@
 <!---
- * Partner Creator
+ * Classroom Shuffle
  *
  * This program allows the user to input names and create many (up to 20 (if possible for size of people))
  * different combos of partnerships. These partnerships can then be saved and accessed later
- * 
+ *
  * This file creates the user interface of the app
- * 
+ *
  * @author Luke Halasy, lhalasy@gmail.com
  * @version April 29, 2018
  *
@@ -21,7 +21,7 @@
     <meta http-equiv="Content-Language" content="en">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <meta http-equiv="X-UA-Compatible" content="ie=edge">
-    <title>Partner Creator</title>
+    <title>Classroom Shuffle</title>
 
 
     <!--Used jQuery for added interactivity in the app
@@ -38,7 +38,7 @@
     -->
     <link href="https://fonts.googleapis.com/icon?family=Material+Icons" rel="stylesheet">
     <link rel="stylesheet" href="style.css">
-    
+
     <script type="text/javascript" src="pageDynamics.js"></script>
     <script src="sorter.js"></script>
 
@@ -47,7 +47,7 @@
     <div class="container" style="height: 100%">
         <div class="row" style="height: 100%">
             <div class="header col s12 z-depth-5" style="background-color: #585c74; height: 12%">
-                <h4 class="center-align">Partner Creator</h4>
+                <h4 class="center-align">Classroom Shuffle</h4>
             </div>
             <form class="partnerAdderForm col s6" onsubmit='return false' style="background-color:#44475a; height: 88%" autocomplete="off">
                 <h6 style="color: #f8f8f2">Add People</h6>
@@ -64,7 +64,7 @@
                 </div>
                 <ul class="collection peopleList" style="overflow: auto; max-height: 70%;" tabindex: "5001">
                 </ul>
-                
+
             </form>
 
             <div class="partnerShower col s6" style="background-color:#6272a4; height: 88%">
@@ -78,7 +78,7 @@
                         <div class="col s2">
                             <a><i class="material-icons previousPartnerListArrow clickableIcon noSelect">chevron_left</i></a>
                         </div>
-                        
+
                         <div class="col s2 offset-s2">
                             <!--onclick="$('#partnersModal').modal('open');"-->
                             <a><i class="material-icons fullscreenButton clickableIcon noSelect">fullscreen</i></a>
@@ -122,7 +122,7 @@
                 <a href="#!" class=" modal-action modal-close btn-flat" style="color: white">Exit</a>
             </div>
         </div>
-        
+
         <div id="retrieveSaveModal" class="modal" style="background-color: #44475a;">
             <div class="modal-content">
                 <h6 style="color: white; padding-bottom: 10px">Saved Partners</h6>
@@ -143,7 +143,7 @@
                             <label for="saveName">Save Name</label>
                         </div>
                         <div class="col s2"><a><i class="material-icons saveButton addPeopleSideButtons noSelect clickableIcon">save</i></a></div>
-                    </div> 
+                    </div>
                 </form>
             </div>
             <div class="modal-footer" style="background-color: #44475a;">
